@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32E52792-A779-4949-91AD-71DE3319306B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\AdvanceTax\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\AdvanceTax\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="EF\Models\Income.cs" />
+    <Compile Include="EF\Models\Payment.cs" />
+    <Compile Include="EF\Models\PaymentSetting.cs" />
+    <Compile Include="EF\Models\Role.cs" />
+    <Compile Include="EF\Models\Setting.cs" />
+    <Compile Include="EF\Models\Ticket.cs" />
+    <Compile Include="EF\Models\Token.cs" />
+    <Compile Include="EF\Models\User.cs" />
+    <Compile Include="EF\TaxContext.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
+    <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Migrations\202212060323293_UserRoleTableCreated.cs" />
+    <Compile Include="Migrations\202212060323293_UserRoleTableCreated.designer.cs">
+      <DependentUpon>202212060323293_UserRoleTableCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212060330584_PkFkAdded.cs" />
+    <Compile Include="Migrations\202212060330584_PkFkAdded.designer.cs">
+      <DependentUpon>202212060330584_PkFkAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212060344123_IncomeTableCreateWithFKUser.cs" />
+    <Compile Include="Migrations\202212060344123_IncomeTableCreateWithFKUser.designer.cs">
+      <DependentUpon>202212060344123_IncomeTableCreateWithFKUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212060347037_UserRoleTableUpdated.cs" />
+    <Compile Include="Migrations\202212060347037_UserRoleTableUpdated.designer.cs">
+      <DependentUpon>202212060347037_UserRoleTableUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061539430_PaymentTableCreatedWithFK.cs" />
+    <Compile Include="Migrations\202212061539430_PaymentTableCreatedWithFK.designer.cs">
+      <DependentUpon>202212061539430_PaymentTableCreatedWithFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061553207_PaymentTableCreated.cs" />
+    <Compile Include="Migrations\202212061553207_PaymentTableCreated.designer.cs">
+      <DependentUpon>202212061553207_PaymentTableCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061556581_PaymentTableCreated1.cs" />
+    <Compile Include="Migrations\202212061556581_PaymentTableCreated1.designer.cs">
+      <DependentUpon>202212061556581_PaymentTableCreated1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061602084_TicketsTableAdded.cs" />
+    <Compile Include="Migrations\202212061602084_TicketsTableAdded.designer.cs">
+      <DependentUpon>202212061602084_TicketsTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061605235_TicketsTableAddedFK.cs" />
+    <Compile Include="Migrations\202212061605235_TicketsTableAddedFK.designer.cs">
+      <DependentUpon>202212061605235_TicketsTableAddedFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212061609103_AllRequiredUpdated.cs" />
+    <Compile Include="Migrations\202212061609103_AllRequiredUpdated.designer.cs">
+      <DependentUpon>202212061609103_AllRequiredUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212211226020_UserTablePassword.cs" />
+    <Compile Include="Migrations\202212211226020_UserTablePassword.designer.cs">
+      <DependentUpon>202212211226020_UserTablePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212211308051_TokenTableAdded.cs" />
+    <Compile Include="Migrations\202212211308051_TokenTableAdded.designer.cs">
+      <DependentUpon>202212211308051_TokenTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\IncomeRepo.cs" />
+    <Compile Include="Repos\PaymentRepo.cs" />
+    <Compile Include="Repos\Payment_settingsRepo.cs" />
+    <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\RoleRepo.cs" />
+    <Compile Include="Repos\SettingsRepo.cs" />
+    <Compile Include="Repos\TicketsRepo.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
+    <Compile Include="Repos\UserRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202212060323293_UserRoleTableCreated.resx">
+      <DependentUpon>202212060323293_UserRoleTableCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212060330584_PkFkAdded.resx">
+      <DependentUpon>202212060330584_PkFkAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212060344123_IncomeTableCreateWithFKUser.resx">
+      <DependentUpon>202212060344123_IncomeTableCreateWithFKUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212060347037_UserRoleTableUpdated.resx">
+      <DependentUpon>202212060347037_UserRoleTableUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061539430_PaymentTableCreatedWithFK.resx">
+      <DependentUpon>202212061539430_PaymentTableCreatedWithFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061553207_PaymentTableCreated.resx">
+      <DependentUpon>202212061553207_PaymentTableCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061556581_PaymentTableCreated1.resx">
+      <DependentUpon>202212061556581_PaymentTableCreated1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061602084_TicketsTableAdded.resx">
+      <DependentUpon>202212061602084_TicketsTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061605235_TicketsTableAddedFK.resx">
+      <DependentUpon>202212061605235_TicketsTableAddedFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212061609103_AllRequiredUpdated.resx">
+      <DependentUpon>202212061609103_AllRequiredUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212211226020_UserTablePassword.resx">
+      <DependentUpon>202212211226020_UserTablePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212211308051_TokenTableAdded.resx">
+      <DependentUpon>202212211308051_TokenTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\AdvanceTax\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
