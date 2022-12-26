@@ -1,0 +1,77 @@
+{
+    'RoleId' : 1,
+    'Name' : "S M Tusher",
+    'Email': "smtusher007@gmail.com",
+    'PhoneNo': "01709604708",
+    'Dob': "2001-10-27",
+    'Gender':"Male",
+    'NidNumber':256484625,
+    'Address':"Dhaka",
+    'AccountType':2,
+    'TinNumber':254524524456,
+    'CreatedAt':"2018-03-29",
+    'UpdatedAt':"2019-03-29"
+}
+
+{
+    'Id' : 1,
+    'Name':"User",
+    'Permission':1,
+    'CreatedAt':"2018-03-29",
+    'UpdatedAt':"2019-03-29"
+}
+
+{
+    'UserId' : 1,
+    'DateStart':"2020-02-23",
+    'DateEnd':"2020-02-13",
+    'IncomeInfo':"Business",
+    'Amount':2000,
+    'CreatedAt':"2020-03-23",
+    'UpdatedAt':"2020-04-25"
+}
+
+{
+    'Id':1
+    'IncomeId': 8,
+    'PaymentAccount':254625558,
+    'TrxId':5252,
+    'Amount':50000,
+    'PaymentDate':"2021-04-02",
+    'CreatedAt':"2020-03-23",
+    'UpdatedAt':"2020-04-25"
+}
+
+{
+    'id':1,
+    'UserId':9,
+    'Subject': "Payment Issues",
+    'Details' :"Payment Update not working in my case",
+    'CreatedAt':"2020-03-23",
+    'UpdatedAt':"2020-04-25"
+}
+
+{
+    'Id':1,
+    'Type':2,
+    'Content':"pictures",
+    'CreatedAt':"2020-03-23",
+    'UpdatedAt':"2020-04-25"
+}
+
+{
+    'Id':1,
+    'MethodName':"no pay",
+    'AccountNumber':859754675,
+    'CreatedAt':"2020-03-23",
+    'UpdatedAt':"2020-04-25"
+}
+
+{
+    'Id':1,
+    'TKey':"",
+    'CreationTime':"2022-02-25",
+    'ExpirationTime':"2022-03-25",
+    'Email':"smtusher007@gmail.com",
+    'Password':"tusher123"
+}
